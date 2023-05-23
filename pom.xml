@@ -408,5 +408,16 @@
       </build>
     </profile>
   </profiles>
-
+  <distributionManagement>
+      <repository>
+          <id>artifactory</id>
+          <name>1c709345e080-releases</name>
+          <url>http://localhost:8081/artifactory/spring-pet-clinic</url>
+      </repository>
+      <snapshotRepository>
+          <id>artifactory</id>
+          <name>1c709345e080-snapshots</name>
+          <url>http://localhost:8081/artifactory/spring-pet-clinic</url>
+      </snapshotRepository>
+  </distributionManagement>
 </project>
