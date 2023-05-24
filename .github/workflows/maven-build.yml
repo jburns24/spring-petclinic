@@ -24,6 +24,10 @@ jobs:
         with:
           java-version: ${{matrix.java}}
           distribution: 'adopt'
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.5
+        with:
+          maven-version: 3.9.2
       - name: Update Maven Settings
         run: |
           echo "<settings xmlns='https://maven.apache.org/SETTINGS/1.0.0' \
