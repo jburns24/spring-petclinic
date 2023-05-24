@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-  <version>3.0.0-SNAPSHOT</version>
+  <version>3.0.1-SNAPSHOT</version>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -412,12 +412,12 @@
       <repository>
           <id>nexus</id>
           <name>1c709345e080-releases</name>
-          <url>https://8e70-73-90-173-221.ngrok-free.app/repository/test-clinic</url>
+          <url>http://localhost:8081/repository/test-clinic</url>
       </repository>
       <snapshotRepository>
           <id>nexus</id>
           <name>1c709345e080-snapshots</name>
-          <url>https://8e70-73-90-173-221.ngrok-free.app/repository/test-clinic</url>
+          <url>http://localhost:8081/repository/test-clinic</url>
       </snapshotRepository>
   </distributionManagement>
 </project>
