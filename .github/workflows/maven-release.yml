@@ -1,7 +1,4 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
-name: Java CI with Maven
+name: Java CI with Maven Release
 
 on:
   push:
@@ -11,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: self-hosted
     strategy:
       matrix:
@@ -26,7 +22,6 @@ jobs:
           distribution: 'adopt'
           # only needed on arm64 self-hosted runner
           architecture: 'aarch64'
-      # This step is only need on self-hosted runner
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.5
         with:
@@ -46,12 +41,11 @@ jobs:
             </servers> \
           </settings>" > ${{ github.workspace }}/settings.xml
 
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml --settings ${{ github.workspace }}/settings.xml
+      - name: Prepare the Maven release
+        run: mvn release:prepare --batch-mode --settings ${{ github.workspace }}/settings.xml
+
+      - name: Perform the Maven release
+        run: mvn release:perform --settings ${{ github.workspace }}/settings.xml
 
       - name: Publish to Artifactory
         run: mvn deploy --settings ${{ github.workspace }}/settings.xml
-        if: github.ref != 'refs/heads/main'
-      #     cache: maven
-      # - name: Build with Maven Wrapper
-      #   run: ./mvnw -B package
