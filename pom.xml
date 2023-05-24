@@ -420,4 +420,9 @@
           <url>http://nexus:8081/repository/test-clinic</url>
       </snapshotRepository>
   </distributionManagement>
+  <scm>
+    <connection>scm:git:git://github.com/jburns24/spring-petclinic.git</connection>
+    <developerConnection>scm:git:git@github.com:jburns24/spring-petclinic.git</developerConnection>
+    <url>https://github.com/jburns24/spring-petclinic</url>
+  </scm>
 </project>
