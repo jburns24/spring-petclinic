@@ -24,6 +24,9 @@ jobs:
         with:
           java-version: ${{matrix.java}}
           distribution: 'adopt'
+          # only needed on arm64 self-hosted runner
+          architecture: 'aarch64'
+      # This step is only need on self-hosted runner
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.5
         with:
