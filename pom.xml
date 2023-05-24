@@ -412,12 +412,12 @@
       <repository>
           <id>nexus</id>
           <name>1c709345e080-releases</name>
-          <url>http://localhost:8081/repository/test-clinic</url>
+          <url>http://nexus:8081/repository/test-clinic</url>
       </repository>
       <snapshotRepository>
           <id>nexus</id>
           <name>1c709345e080-snapshots</name>
-          <url>http://localhost:8081/repository/test-clinic</url>
+          <url>http://nexus:8081/repository/test-clinic</url>
       </snapshotRepository>
   </distributionManagement>
 </project>
